@@ -1,0 +1,106 @@
+Backend
+
+create node folder 
+open crome https://nodejs.org/docs/latest/api/
+we used this packeges 
+
+
+PS C:\snehal\NODE> npm init                                                                                 This utility will walk 
+you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (node)
+version: (1.0.0) 1.0.1
+description: create node server basic
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: Thummar Snehal
+license: (ISC)
+type: (commonjs)
+About to write to C:\snehal\NODE\package.json:
+
+{
+  "name": "node",
+  "version": "1.0.1",
+  "description": "create node server basic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thummar Snehal",
+  "license": "ISC",
+  "type": "commonjs"
+}
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (node)
+version: (1.0.0) 1.0.1
+description: create node server basic
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: Thummar Snehal
+license: (ISC)
+type: (commonjs)
+About to write to C:\snehal\NODE\package.json:
+
+{
+  "name": "node",
+  "version": "1.0.1",
+  "description": "create node server basic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thummar Snehal",
+  "license": "ISC",
+  "type": "commonjs"
+}
+
+
+Is this OK? (yes)
+PS C:\snehal\NODE>
+ it is create pakeage.json file
+
+then go in node.js link
+go on file system
+then ctr + n and search append ans then copy other wise you write in index.js
+
+//  main declaration ayathi start
+
+go on crome search npm then click first link then search chalk then install chalk command
+then go on packege.json it is show chalk
+
+packege.json ma type ma module lakvu nakar no thy chalk
+
+then index.js ma import karavo chalk ne 
+then write a code
+
+ npm i chalk  install chalk
+ npm un chalk  uninstall chalk
+ npm i axios --save-dev  download axios packeges
+ this is important to use axios
+
+
+ create folder Expreessjs then
+  npm init -y(defaulk)
+ npm i express
+
+ install npm i nodemon -g
+
+  in Expreessjs craete view folder and then create file index.html
