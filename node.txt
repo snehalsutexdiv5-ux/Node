@@ -104,3 +104,17 @@ then write a code
  install npm i nodemon -g
 
   in Expreessjs craete view folder and then create file index.html
+
+  4 -4 -2026
+
+  create task-node folder
+  mkdir task-node
+  npm init -y 
+  npm i express
+   npm i ejs
+   npm i express ejs mongoose
+
+   create file index.js
+
+   then create folder in task-node like views then
+   create file index.ejs
