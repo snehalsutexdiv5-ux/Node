@@ -1,0 +1,18 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+const Home = () => {
+  return (
+    <>
+    <div className='w-full h-screen flex items-center justify-center'>
+        <Link to='/login'>
+        <button className='w-full rounded-2xl text-white bg-black p-2 
+        text-center'>Go To Login Page</button>
+        </Link>
+    </div>
+    
+    </>
+  )
+}
+
+export default Home
