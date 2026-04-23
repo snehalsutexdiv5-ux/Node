@@ -1,32 +1,29 @@
-// check kare ke database ma filde ma ekey filde khali nathi ne
+const userModel = require("../models/user.model");
 
-const userModel = require("../Models/user.model");
+//third validation --> check all filed are not blank
 
-
-// thrid validation --> check all field are not blank
-
-module.exports.createUser = async ({username, email, password})=>{
-    if(!username || !email || !password){
-        throw new Error ("All Filed Are Required");
-    }
-    const user = await userModel.create({username, email, password});
-    
-    return user;
-};
-
-// next create a controller for register 
-
-
-// update data
-module.exports.updateUser = async({userId, username, email}) =>{
-  const updatedUser = await userModel.findOneAndUpdate(
-    {_id: userId},
-    { username, email},
-    {new: true},
-  )
-
-  if(!updatedUser){
-    throw new Error ("user not found")
+module.exports.createuser = async ({ username, email, password, role }) => {
+  if (!username || !email || !password) {
+    throw new Error("All fields are required");
   }
-  return updatedUser;
+  const user=await userModel.create({username, email,password,role});
+  return user;
 };
+//updtae user
+module.exports.updateUser=async ({userId,email,username})=>{
+  if(!username || !email){
+    throw new Error("all fields are required !!");
+  }
+
+  const updateUser=await userModel.findOneAndUpdate(
+    {_id:userId},
+    {username,email},
+    {new:true },
+  );
+if(!updateUser){
+  throw new Error("User not found");
+}
+return updateUser;
+
+};
+

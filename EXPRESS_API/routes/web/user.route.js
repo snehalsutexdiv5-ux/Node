@@ -1,36 +1,45 @@
-const express = require("express");
-const{body} = require("express-validator");
-const userController = require("../../controllers/user.controller")
+const express = require("express")
+const router = express.Router();
+const { body } = require("express-validator");
+const userController = require("../../controllers/user.controller");
 const middleware = require("../../middlewares/user.middleware");
 
+//register user
+//second validation --use express validator package
+router.post(
+  "/register",
+  [
+    body("username")
+      .isLength({ min: 5 })
+      .withMessage("Username must be at least 5 characters long"),
+    body("email").isEmail().withMessage("Invalid email address"),
+    body("password")
+      .isLength({ min: 8 })
+      .withMessage("Password must be at least 8 characters long"),
+  ],
+  userController.registerUser,
+);  
 
-
-const router = express.Router();
-
-
-
-// register user
-// second validation -- use express validator package
-router.post('/register',[
-    body('username').isLength({min: 4}).withMessage("username must be 4 character long"),
-     body('email').isEmail().withMessage("Enter Vaild Email"),
-      body('password').isLength({min: 6}).withMessage("Password must be 6 characters long"),
-], userController.registerUser );
-
-// login user
-router.post("/login", [
-    body('email').isEmail().withMessage("Enter Vaild Email"),
-    body("password").isLength({min:6}).withMessage("Password Must Be 6 Character Long"),
+//login user
+//router --> controller
+router.post("/login",[
+  body("email").isEmail().withMessage("Invalid email address"),
+  body("password")
+    .isLength({ min: 6 })
+    .withMessage("Password must be at least 6 characters long"),
 ], userController.loginUser);
 
-// show profile
-router.get("/profile",middleware.authUser, userController.profile);
 
+//profile
+//router -->middleware -->controller
+router.get("/profile",middleware.authenticateUser,userController.profileUser);
 
-// logout profile
-router.get("/logout", middleware.authUser, userController.logout);
+//edit profile
+//router--> service-->controller
+router.put("/update",middleware.authenticateUser,userController.updateProfile);
 
-// update profile
-router.put("/update", middleware.authUser , userController.updateUser);
+//logout 
+//router-->controller
+router.get("/logout",middleware.authenticateUser,userController.logoutUser);
 
 module.exports = router;

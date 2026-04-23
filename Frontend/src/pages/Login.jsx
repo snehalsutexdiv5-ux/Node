@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function LoginPage() {
+export default function Login() {
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center bg-slate-50 overflow-hidden">
 
@@ -46,7 +47,7 @@ export default function LoginPage() {
           </a>
           <div className="h-px w-8 bg-slate-200"></div>
           <p className="text-xs text-slate-500">
-            Don't have an account? <a href="#" className="text-slate-900 font-medium hover:underline">Join us</a>
+            Don't have an account? <Link to="/joinUs" className="text-slate-900 font-medium hover:underline">Join us</Link>
           </p>
         </div>
       </div>
