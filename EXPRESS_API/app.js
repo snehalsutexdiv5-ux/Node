@@ -7,8 +7,10 @@ const cors = require("cors");
 const cookieParser=require("cookie-parser");
 
 //Router
-const userRoute = require("./routes/web/user.route");
+const userRouter = require("./routes/web/user.route");
 const adminRouter=require("./routes/web/admin.route");
+const productRouter = require("./routes/web/product.route");
+const chatRouter = require("./routes/web/chat.route");
 
 const app = express();
 app.use(express.json());
@@ -30,8 +32,10 @@ PORT = process.env.PORT;
 app.get("/", (req, res) => {
   res.send("Server's Home Page");
 });
-app.use("/user",userRoute); //1.localhost:3005/user/register
+app.use("/user",userRouter); //1.localhost:3005/user/register
 app.use("/admin",adminRouter);
+app.use("/product", productRouter);
+app.use("/bot", chatRouter)
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

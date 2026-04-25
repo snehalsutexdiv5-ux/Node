@@ -3,7 +3,7 @@ const bcrypt=require("bcrypt");
 const jwt=require("jsonwebtoken");
 
 //add first validation --> database validation 
-let userSchema=mongoose.Schema({
+let userSchema = mongoose.Schema({
     username:{
         type:String,
         minlength:5,
